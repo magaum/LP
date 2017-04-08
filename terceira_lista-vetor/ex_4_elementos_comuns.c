@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <locale.h>
 /*
 
 	Dado dois vetores, A (5 elementos) e B (8 elementos), faça um programa em C que
