@@ -7,7 +7,7 @@
 int main(){
 	
 	printf("\nVetores começam com os indicadores em 0\nPara que seja mais fácil de encontrar o número maior foi acrescentado 1 a posição\n");
-	printf("COLUNA:		1	2	3	4	5	6	7	8	9	10\n");
+	printf("\nCOLUNA:		1	2	3	4	5	6	7	8	9	10\n");
 
 	int i,j,x=0,maior=0,linha,coluna;
 	srand( (unsigned)time(NULL) );
