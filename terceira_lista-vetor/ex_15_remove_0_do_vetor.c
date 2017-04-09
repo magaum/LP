@@ -7,6 +7,8 @@
 zero avançando uma posição, posiçã o, com os com os valores subsequentes do vetor.
 Dessa forma todos “zeros” devem ficar para as posições finais do vetor.
 
+para a função rand() gerar números aleatórios é necessário colocar esta linha "srand( (unsigned)time(NULL) );"
+
 */
 
 int main(){
