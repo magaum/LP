@@ -7,19 +7,20 @@
 int main(){
 	
 	printf("\nVetores começam com os indicadores em 0\nPara que seja mais fácil de encontrar o número maior foi acrescentado 1 a posição\n");
-	printf("\nCOLUNA:		1	2	3	4	5	6	7	8	9	10\n");
+	printf("\nCOLUNA:\t\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\n");
 
-	int i,j,x=0,maior=0,linha,coluna;
+	int i,j,x[10][10],maior=0,linha,coluna,k=0;
 	srand( (unsigned)time(NULL) );
 // srand( (unsigned)time(NULL) );  gera a cada vez que o programa é executado numeros aleatórios baseando-se no relógio
 	printf("\n");
 	for (i=0;i<10;i++){
-		printf("LINHA %d:	", i+1);
+		printf("LINHA %d:\t", i+1);
 		for (j=0;j<10;j++){
-			x=(rand()%100);
-			printf("%d	",x);
-			if(x>maior){
-				maior=x;
+			x[i][j]=0;
+			x[i][j]=rand()%100;
+			printf("%d\t",x[i][j]);
+			if(x[i][j]>maior){
+				maior=x[i][j];
 				linha=i+1;
 				coluna=j+1;
 			}
