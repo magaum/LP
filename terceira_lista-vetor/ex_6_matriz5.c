@@ -8,16 +8,16 @@ elementos. Escreva ao final a matriz obtida.
 
 
 int main(){
-	int i,j,verdade=0;
+	int x,y,verdade=0, vetor[5][5];
 	printf("\n");
-	for (i=0;i<5;i++){
-		printf("linha %d: ",i);
-		for(j=0;j<5;j++){
-			if (i==verdade && j == verdade){
-				printf("1 ");
-				continue;
+	for (x=0;x<5;x++){
+		printf("linha %d: ",x);
+		for(y=0;y<5;y++){
+			vetor[x][y]=0;
+			if (x==verdade && y == verdade){
+				vetor[x][y]=1;
 			}
-			printf("0 ");
+			printf("%d ",vetor[x][y]);
 		}
 		verdade++;
 		printf("\n\n");
