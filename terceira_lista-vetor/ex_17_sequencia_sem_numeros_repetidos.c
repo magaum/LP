@@ -34,7 +34,7 @@ int main(){
 			if (lista_m[i]==lista_n[j]){
 				verdade=1;
 			}
-			}
+		}
 		elementos[i]=0;
 		if(verdade==0){
 			elementos[k]=lista_m[i];
