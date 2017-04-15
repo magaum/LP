@@ -17,13 +17,14 @@ seqüência e o número de vezes que cada um deles ocorre na mesma.
 
 int main(){
 
-	int sequencia[50],repete,i=0,k=0,j=0,ocorre=0;
+	int repete,i=0,k=0,j=0,ocorre=0;
+	float sequencia[50];
 
 	printf("-1.7,3.0, 0.0, 1.5, 0.0, -1.7, 2.3, -1,7\n\nDigite a quantidade de numeros que terá a sequencia: ");
 	scanf("%d",&repete);
 	for (i=0;i<repete;i++){
 		printf("Digite o %d° número da sequecia: ",i+1);
-		scanf("%d",&sequencia[i]);
+		scanf("%f",&sequencia[i]);
 	}
 	for (i=0;i<repete;i++){
 		k=0;
@@ -33,8 +34,13 @@ int main(){
 			j++;
 			if(sequencia[i]==sequencia[k]){
 				ocorre++;
+				if (ocorre>1){
+					sequencia[k]=99999999999999991;
+				}
 			}
 		}
-		printf("%d ocorre %d vezes\n",sequencia[i],ocorre);
-	}
+		if (sequencia[i]>=-9999999999999&&sequencia[i]<=9999999999999999){
+			printf("%.1f ocorre %d vezes\n",sequencia[i],ocorre);
+		}	
+	}	
 }
