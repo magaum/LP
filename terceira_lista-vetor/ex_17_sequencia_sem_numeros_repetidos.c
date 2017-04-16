@@ -10,7 +10,7 @@ das seqüências originais sem repetição.
 
 int main(){
 
-	int m,n,i,j,lista_m[50],lista_n[50],k=0,elementos[50],verdade=0;
+	int m,n,i,j,k=0,l,lista_m[50],lista_n[50],elementos[50],verdade=0;
 
 	printf("Digite a quantidade de numeros que a primeira sequencia 'M', irá receber: ");
 	scanf("%d",&m);
@@ -36,27 +36,42 @@ int main(){
 			}
 		}
 		if(verdade==0){
-			elementos[k]=lista_m[i];
-			k++;
+			for (l=0;l<k;l++){
+				if(elementos[l]==lista_m[i]){
+					verdade=1;
+				}
+			}
+			if(verdade==0){
+				elementos[k]=lista_m[i];
+				k++;
+			}
 		}
 		verdade=0;
 	}
-	k+=n;
-	for (i=n,j=0;i<k;i++,j++){
-		lista_n[i]=elementos[j];
+	
+	for (l=0;l<n-1;l++){
+		for (i=1;i<n;i++){
+			if (lista_n[l]==lista_n[i]){
+				lista_n[i]='a';
+			}
+		}
+		if(lista_n[l]>=-999999&&lista_n[l]<=9999999){
+			k++;
+			elementos[k]=lista_n[l];
+		}
 	}
 	for(i=0;i<k;i++){
 		for(j=0;j<k;j++){
-			if(lista_n[i]<lista_n[j]){
-				elementos[n]=lista_n[j];
-				lista_n[j]=lista_n[i];
-				lista_n[i]=elementos[n];
+			if(elementos[i]<elementos[j]){
+				lista_n[n]=elementos[j];
+				elementos[j]=elementos[i];
+				elementos[i]=lista_n[n];
 				n++;
 			}
 		}
 	}
 	for (i=0;i<k;i++){
-		printf("%d ",lista_n[i]);
+		printf("%d ",elementos[i]);
 	}
 	printf("\n");
 }
