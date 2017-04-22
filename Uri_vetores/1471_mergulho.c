@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 /*
     Entrada
@@ -29,29 +30,43 @@ Entrada         Saída
 
 
 */
+void limparBuffer(void);
 
 int main(){
 
-	int N,R,i,j,aux=0,flag=1;
+	int N,R,n,i,j,flag=1,aux;
     
 	scanf("%d %d",&N, &R);
-	int voltaram[R],N_voltaram[N-R],vetor[R];
-	for(i=0;i<R;i++){
-		scanf("%d",&voltaram[i]);
+	
+	int N_voltaram[N-R],voltaram[R], vetor[R];
+	limparBuffer();
+	char c,palavra[R];
+
+	while((c=getchar()) != '\n'){
+		if (c!=' '){
+			palavra[i]=c;
+			i++;
+		}
 	}
 	if(N!=R){
-		for(i=0;i<N;i++){
-			vetor[i]=i+1;
+                for(i=0;i<N;i++){
+                        vetor[i]=i+1;
+                }
+		aux=0;
+		for (i=0;i<R;i++){
+			voltaram[aux]=palavra[i]-'0';
+			aux++;
 		}
+		aux=0;
 		for(i=0;i<N;i++){
 			for(j=0;j<R;j++){
-				if (voltaram[j]==vetor[i]){
+				if(voltaram[j]==vetor[i]){
 					flag=0;
 					break;
 				}
 			}
 			if(flag){
-					N_voltaram[aux]=vetor[i];
+				N_voltaram[aux]=vetor[i];
 				aux++;
 			}
 			flag=1;
@@ -59,10 +74,13 @@ int main(){
 		for(i=0;i<N-R;i++){
 			printf("%d ",N_voltaram[i]);
 		}
-	printf("\n");
-	}else{
+		printf("\n");
+	}else if(N==R){
 			printf("*\n");
 	}
-	return 0;
+}
 
+void limparBuffer(void){
+	char c;
+	while((c=getchar()) != '\n' && c != EOF);
 }
