@@ -25,20 +25,17 @@ Entrada         Saída
 
 int main(){
 
-	int N,R,i,j,aux=0,flag=1;
+	int N,R,i,j,flag=1;
     
 	while(scanf("%d %d",&N, &R)!=EOF){
-		int voltaram[R],N_voltaram[N-R],vetor[R];
+		int aux=0,voltaram[R],N_voltaram[N-R];
 		for(i=0;i<R;i++){
 			scanf("%d",&voltaram[i]);
 		}
 		if(N!=R){
 			for(i=0;i<N;i++){
-				vetor[i]=i+1;
-			}
-			for(i=0;i<N;i++){
 				for(j=0;j<R;j++){
-					if (vetor[i]==voltaram[j]){
+					if (i+1==voltaram[j]){
 						flag=0;
 						break;
 					}
@@ -52,9 +49,10 @@ int main(){
 			for(i=0;i<N-R;i++){
 				printf("%d ",N_voltaram[i]);
 			}
-		printf("\n");
+			aux = 0;
+			printf("\n");
 		}else{
-				printf("*\n");
+			printf("*\n");
 		}
 	}
 	return 0;
