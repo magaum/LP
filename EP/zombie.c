@@ -5,12 +5,17 @@
 int main(){
   
 	char matriz[vetor][vetor], linhas[vetor];
-	int x, y, flag=5;
-  
+	int x, y, flag;
+//	int end = 1;
+//	do{
+	flag=5;
 	for (x=0;x<vetor;x++){
 		gets(linhas);
 		for(y=0; y<vetor ; y++){
 			matriz[x][y]=linhas[y];
+//			if (linhas[y]==EOF){
+//				end=0;
+//			}
 		}
 	}
 /*											partes que estão sendo testadas
@@ -87,10 +92,10 @@ int main(){
 			}
 		}flag--;
 	}
-	printf("\n");
 	for (x=0;x<vetor;x++){
 		for(y=0;y<vetor;y++){
 			printf("%c", matriz[x][y]);
 		}printf("\n");
 	}
+//	}while(end);
 }
