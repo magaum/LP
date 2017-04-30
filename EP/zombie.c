@@ -7,7 +7,7 @@ int main(){
 	int x, y, flag;
 
 	while(-1){
-	flag=5;
+	flag=7;
 	for (x=0;x<vetor;x++){
 		if(scanf("%s",matriz[x])==EOF){
 			return 0;
