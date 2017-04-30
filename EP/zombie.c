@@ -1,21 +1,16 @@
 #include <stdio.h>
-#include <string.h>
 #define vetor 5
 
 int main(){
   
-	char matriz[vetor][vetor], linhas[vetor];
+	char matriz[vetor][vetor];
 	int x, y, flag;
-//	int end = 1;
-//	do{
+
+	while(-1){
 	flag=5;
 	for (x=0;x<vetor;x++){
-		gets(linhas);
-		for(y=0; y<vetor ; y++){
-			matriz[x][y]=linhas[y];
-//			if (linhas[y]==EOF){
-//				end=0;
-//			}
+		if(scanf("%s",matriz[x])==EOF){
+			return 0;
 		}
 	}
 /*											partes que estão sendo testadas
@@ -97,5 +92,5 @@ int main(){
 			printf("%c", matriz[x][y]);
 		}printf("\n");
 	}
-//	}while(end);
+	}
 }
