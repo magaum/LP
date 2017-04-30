@@ -4,7 +4,7 @@
 
 int main(){
   
-	char matriz[vetor][vetor], linhas[vetor], matriz_infectada[vetor][vetor];
+	char matriz[vetor][vetor], linhas[vetor];
 	int x, y, flag=5;
   
 	for (x=0;x<vetor;x++){
