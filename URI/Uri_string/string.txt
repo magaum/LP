@@ -1,0 +1,7 @@
+tempo de compilação: 
+  - A definição de parâmetros é passada no código fonte do programa;
+tempo de execução:
+  - A definição de parâmetros são passados quando o programa é executado;
+  
+O que é o & = "Endereço de" AHHHHHHHHHHHHHHHHH \o/ - o & vai pegar o valor e colocar no endereço da variável
+
