@@ -5,31 +5,34 @@ void limparBuffer();
 
 int main(){
   
-  int N,i,j,k=0,tam,ascii,flag=0;
-  char palavra[50],mensagem[50];
+  int N,i,j,tam,flag=0,primeira_posicao,k=0;
+  char palavra[100];
   
   scanf("%d",&N);
   limparBuffer();
   for(i=0;i<N;i++){
-    fgets(palavra,50,stdin);
+    primeira_posicao=1;
+    k=0;
+    fgets(palavra,100,stdin);
     tam=strlen(palavra);
+    do{
+	tam--;
+    }while(palavra[tam]==' ');
     for (j=0;j<tam;j++){
-      //ascii=palavra[j];
-     /* if (palavra[0]!=' '){
+      if (palavra[j]==' '){
+	      continue;
+      }
+      if (primeira_posicao&&palavra[0]!=' '){
          printf("%c",palavra[j]);
-      }*/
+	 primeira_posicao=0;
+      } 
       if(palavra[j]!=' '){
         flag=1;
       }
-      if(flag&&palavra[j-1]==' '){//((ascii-'a')>=0&&ascii-'z')<=0)
-          //mensagem[k];
+      if(flag&&palavra[j-1]==' '){
           printf("%c",palavra[j]);
-          //k++;
       }
     }
-    /*for (j=0;j<k;j++){
-      printf("%c",mensagem[j]);
-    }*/
     printf("\n");
   }
 }
