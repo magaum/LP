@@ -3,22 +3,24 @@
 
 int main(){
 
-	int N,i,j,k,inverte;
+	int N,i,j,k,inverte,tam;
 	char palavra[1001];
 
 	scanf("%d",&N);
 	getchar();
 	for (i=0;i<N;i++){
 		gets(palavra);
-		for (j=0,inverte=strlen(palavra);j<strlen(palavra);j++,inverte--){
+		inverte=strlen(palavra);
+		tam=inverte;
+		for (j=0,inverte;j<tam;j++,inverte--){
 			k=palavra[j];
 			if (palavra[j]>=65 && palavra[j]<=90 || palavra[j]>=97 && palavra[j]<=122){
 					k+=3;
 			}
 			palavra[j]=k;
 		}
-		inverte=(strlen(palavra)/2);
-		if (strlen(palavra)%2!=0){
+		inverte=tam/2;
+		if (tam%2!=0){
 			inverte++;
 		}
 
@@ -28,7 +30,7 @@ int main(){
 			palavra[j]=k;
 		}
 
-		for (j=strlen(palavra)-1;j>=0;j--){
+		for (j=tam-1;j>=0;j--){
 			printf("%c",palavra[j]);
 		}printf("\n");
 	}
