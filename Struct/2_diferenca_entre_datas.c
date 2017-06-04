@@ -6,10 +6,10 @@ struct dma {
     int ano;
 };
 
-struct dma duracao (struct dma x, struct dma y);
+int duracao (struct dma x, struct dma y);
 
 int main(){
-  int dia,mes,ano,out;
+  int dia,mes,ano, out;
   struct dma datainicio;
   struct dma datafim;
   
@@ -20,14 +20,13 @@ int main(){
   datainicio.ano = ano;
   printf("Digite a data final separada por espacos: ");
   scanf("%d %d %d",&dia,&mes,&ano);
-  datainicio.dia = dia;
-  datainicio.mes = mes;
-  datainicio.ano = ano;
-  printf("Digite a duracao do evento em dias: ");
+  datafim.dia = dia;
+  datafim.mes = mes;
+  datafim.ano = ano;
   out = duracao(datainicio,datafim);
   printf("O evento durou %d dias\n",out);
 }
-struct dma duracao (struct dma x, struct dma y){
+int duracao ( struct dma x, struct dma y){
   int data,dia,mes,ano;
   
   if(x.dia>y.dia){
@@ -37,28 +36,28 @@ struct dma duracao (struct dma x, struct dma y){
     dia=y.dia-x.dia;
   }
   else{
-    dia=x.dia
+     dia=0;
   } 
   if(x.mes>y.mes){
-    mes=x.dia-y.dia;
+    mes=x.mes-y.mes;
   }
   else if(x.mes<y.mes){
-    mes=y.dia-x.dia;
+    mes=y.mes-x.mes;
   }
   else{
-    mes=x.dia
+     mes=0;
   }
   
   if(x.ano>y.ano){
-    ano=x.dia-y.dia;
+    ano=x.ano-y.ano;
   }
   else if(x.ano<y.ano){
-    ano=y.dia-x.dia;
+    ano=y.ano-x.ano;
   }
   else{
-    ano=x.dia
+     ano=0;
   }
-  
-  return dia+mes*=30+ano*=360;
+
+  return dia+(mes*30)+(ano*360);
   ;  
 }
