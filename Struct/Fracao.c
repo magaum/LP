@@ -23,13 +23,18 @@ int main(){
   scanf("%d",&y.den);
   
   exibefracao(x);
+  x=somafracao(x,y);
+  printf("%d / %d",x.num,x.den);
 }
 
 void exibefracao(struct fracao fracaoA){
   printf("%d/%d\n",fracaoA.num,fracaoA.den);
 }
-struct fracao somafracao(struct fracaoA, struct fracaoB){
-  
+struct fracao somafracao(struct fracao fracaoA, struct fracao fracaoB){
+  struct fracao soma;
+  soma.num = (fracaoA.num*fracaoB.den)+()fracaoB.num*fracaoA.den;
+  soma.den = fracaoA.den*fracaoB.den;
+  return soma;
 }
 /*
 struct fracao multiplica(fracaoA, fracaoB){
